@@ -1,3 +1,4 @@
+import 'package:car_rent/Bttomnavigationbar_car.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -98,21 +99,28 @@ class _Loginscreen2State extends State<Loginscreen2> {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 150.h, left: 50.w),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      "Verify",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                child: InkWell(onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context) {
+                    return BottomnavigationbarWidgets();
+
+                  },) ,);
+                },
+                  child: Container(
+                    child: Center(
+                      child: Text(
+                        "Verify",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
                     ),
+                    width: 360.w,
+                    height: 80.h,
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20.sp)),
                   ),
-                  width: 360.w,
-                  height: 80.h,
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20.sp)),
                 ),
               )
             ],

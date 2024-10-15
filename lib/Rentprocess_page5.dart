@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
@@ -98,24 +99,18 @@ class AlertDialogebox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(CupertinoIcons.back)),
+        title: Text("Enter Your Pin"),
+      ),
       body: Column(
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 30.h, left: 20.w),
-                child: Icon(Icons.arrow_back_ios_new_sharp),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 30.h, left: 30.w),
-                child: Text(
-                  "Enter Your PIN",
-                  style:
-                      TextStyle(fontSize: 30.sp, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          ),
+
           Row(
             children: [
               Padding(

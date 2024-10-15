@@ -1,5 +1,7 @@
+import 'package:car_rent/otherscreen3.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Otherscreen2 extends StatefulWidget {
@@ -16,6 +18,15 @@ class _Otherscreen2State extends State<Otherscreen2> {
         backgroundColor: Colors.black,
         body: Stack(
           children: [
+            Container(
+              height: 1.sh,
+              width: 1.sw,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image:
+                          AssetImage("assets/Screenshot 2024-10-14 115009.png"),
+                      fit: BoxFit.cover)),
+            ),
             Row(
               children: [
                 Padding(
@@ -76,36 +87,45 @@ class _Otherscreen2State extends State<Otherscreen2> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 800.w, left: 40.h),
-                  child: Container(
-                    child: Center(
-                      child: Text(
-                        "Get Started",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return Carrental_3();
+                        },
+                      ));
+                    },
+                    child: Container(
+                      child: Center(
+                        child: Text(
+                          "Get Started",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
                       ),
+                      width: 350.w,
+                      height: 80.h,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20.r)),
                     ),
-                    width: 350.w,
-                    height: 80.h,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.r)),
                   ),
                 )
               ],
             ),
-            Row(
-              children: [
-                Container(
-                  height: 870,
-                  width: 410,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(
-                              "assets/Screenshot 2024-10-07 192158.png"),
-                          fit: BoxFit.cover)),
-                )
-              ],
-            )
+            // Row(
+            //   children: [
+            //     Container(
+            //       height: 1.sh,
+            //       width: 1.sw,
+            //       decoration: BoxDecoration(
+            //           image: DecorationImage(
+            //               image: AssetImage(
+            //                   "assets/Screenshot 2024-10-07 192158.png"),
+            //               fit: BoxFit.cover)),
+            //     )
+            //   ],
+            // )
           ],
         ));
   }

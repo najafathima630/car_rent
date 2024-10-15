@@ -1,3 +1,4 @@
+import 'package:car_rent/Rentprocess_page4.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,11 @@ class _RentprocessPage3State extends State<RentprocessPage3> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(Icons.arrow_back_ios_new_sharp),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(CupertinoIcons.back)),
         title: Text("Payment Methods"),
         actions: [
           Icon(
@@ -236,28 +241,37 @@ class _RentprocessPage3State extends State<RentprocessPage3> {
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 30.w, top: 400.h),
-                child: Container(
-                  child: Row(
-                    children: [
-                      Center(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 150.w),
-                          child: Text(
-                            "Continue",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 25.sp,
-                                fontWeight: FontWeight.bold),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return RentprocessPage4();
+                      },
+                    ));
+                  },
+                  child: Container(
+                    child: Row(
+                      children: [
+                        Center(
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 150.w),
+                            child: Text(
+                              "Continue",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25.sp,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
+                    width: 390.w,
+                    height: 60.h,
+                    decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(20.r)),
                   ),
-                  width: 390.w,
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(20.r)),
                 ),
               )
             ],

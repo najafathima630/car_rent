@@ -1,3 +1,4 @@
+import 'package:car_rent/Rentprocess_page5.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -186,7 +187,7 @@ class _RentprocessPage4State extends State<RentprocessPage4> {
                 padding: EdgeInsets.only(top: 370.h, left: 10.w),
                 child: Container(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 10.h, left: 10.w),
+                    padding: EdgeInsets.only(top: 10.h, left: 20.w),
                     child: Text(
                       "Price Details",
                       style: TextStyle(
@@ -323,21 +324,29 @@ class _RentprocessPage4State extends State<RentprocessPage4> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 810.h, left: 10.w),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      "Confirm Payment",
-                      style: TextStyle(
-                          fontSize: 25.sp,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w900),
+                child: InkWell(onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return AlertDialogebox();
+                    },
+                  ));
+                },
+                  child: Container(
+                    child: Center(
+                      child: Text(
+                        "Confirm Payment",
+                        style: TextStyle(
+                            fontSize: 25.sp,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900),
+                      ),
                     ),
+                    width: 420.w,
+                    height: 60.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.r),
+                        color: Colors.blue),
                   ),
-                  width: 420.w,
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.r),
-                      color: Colors.blue),
                 ),
               ),
             ],

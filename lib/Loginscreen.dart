@@ -1,6 +1,8 @@
+import 'package:car_rent/Loginscreen2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class Loginscreen extends StatefulWidget {
   const Loginscreen({super.key});
@@ -54,34 +56,33 @@ class _LoginscreenState extends State<Loginscreen> {
                         color: Colors.grey),
                   ),
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: "+91",
-                    prefixText: '+91 ',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(14.r)),
-                  ),
-                  keyboardType: TextInputType.phone,
-                ),
+                IntlPhoneField(),
                 Row(
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top: 30.h),
-                      child: Container(
-                        child: Center(
-                          child: Text(
-                            "Get OTP",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
+                      child: InkWell(onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return Loginscreen2();
+
+                        },),);
+                      },
+                        child: Container(
+                          child: Center(
+                            child: Text(
+                              "Get OTP",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
                           ),
+                          width: 410.w,
+                          height: 70.h,
+                          decoration: BoxDecoration(
+                              color: Colors.purple,
+                              borderRadius: BorderRadius.circular(20.sp)),
                         ),
-                        width: 410.w,
-                        height: 70.h,
-                        decoration: BoxDecoration(
-                            color: Colors.purple,
-                            borderRadius: BorderRadius.circular(20.sp)),
                       ),
                     )
                   ],

@@ -1,3 +1,4 @@
+import 'package:car_rent/Rentaprocess_page2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +17,9 @@ class _RentprocessPage1State extends State<RentprocessPage1> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(Icons.arrow_back_ios_new_sharp),
+        leading: IconButton(onPressed: () {
+          Navigator.of(context).pop();
+        }, icon: Icon(CupertinoIcons.back)),
         actions: [Icon(CupertinoIcons.heart)],
       ),
       body: Column(
@@ -450,18 +453,25 @@ class _RentprocessPage1State extends State<RentprocessPage1> {
               ),
               Padding(
                 padding: EdgeInsets.only(left: 70, top: 20.h),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      "Rent now",
-                      style: TextStyle(color: Colors.white, fontSize: 20.sp),
+                child: InkWell(onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context) {
+                    return Carrental_11();
+
+                  },) ,);
+                },
+                  child: Container(
+                    child: Center(
+                      child: Text(
+                        "Rent now",
+                        style: TextStyle(color: Colors.white, fontSize: 20.sp),
+                      ),
                     ),
+                    width: 180.w,
+                    height: 60.h,
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20.sp)),
                   ),
-                  width: 180.w,
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20.sp)),
                 ),
               )
             ],

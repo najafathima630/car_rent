@@ -8,6 +8,8 @@ import 'package:car_rent/Rentprocess_page1.dart';
 import 'package:car_rent/Rentprocess_page3.dart';
 import 'package:car_rent/Rentprocess_page4.dart';
 import 'package:car_rent/Rentprocess_page5.dart';
+import 'package:car_rent/Task1.dart';
+import 'package:car_rent/Task2.dart';
 import 'package:car_rent/Url_launcher.dart';
 import 'package:car_rent/Whishlist_page.dart';
 import 'package:car_rent/inbox_page.dart';
@@ -31,6 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(designSize: Size(450, 975),splitScreenMode: true,minTextAdapt: true,
       builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.
@@ -51,7 +54,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: Loginscreen2(),
+        home: Task1(),
     )
     );
   }

@@ -61,20 +61,20 @@ class _Work1State extends State<Work1> {
                         color: Colors.grey),
                   ),
                 ),
-                Stack(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 50.w,
-                      ),
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        color: Colors.purple,
-                      ),
-                    )
-                  ],
-                )
+                // Stack(
+                //   children: [
+                //     Padding(
+                //       padding: EdgeInsets.only(
+                //         left: 50.w,
+                //       ),
+                //       child: Container(
+                //         width: 50,
+                //         height: 50,
+                //         color: Colors.purple,
+                //       ),
+                //     )
+                //   ],
+                // )
               ],
             ),
             Padding(

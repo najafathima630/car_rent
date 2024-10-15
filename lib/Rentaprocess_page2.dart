@@ -1,4 +1,5 @@
 // import 'package:car_rental/Car_Rental_UI/CarRental_12.dart';
+import 'package:car_rent/Rentprocess_page3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -381,7 +382,7 @@ class _Carrental_11State extends State<Carrental_11> {
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return Carrental_11();
+                            return RentprocessPage3();
                           },
                         ));
                       },
